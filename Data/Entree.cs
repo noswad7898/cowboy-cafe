@@ -9,7 +9,7 @@ namespace CowboyCafe.Data
     /// </summary>
     public abstract class Entree
     {
-        public abstract double Price { get; set; }
+        public abstract double Price { get; }
 
         public abstract uint Calories { get; }
 
