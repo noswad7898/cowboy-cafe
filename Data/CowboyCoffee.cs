@@ -6,6 +6,12 @@ namespace CowboyCafe.Data
 {
     public class CowboyCoffee : Drink
     {
+        public bool decaf = false;
+        public bool Decaf
+        {
+            get { return decaf; }
+            set { decaf = value; }
+        }
         public bool roomForCream = false;
         public bool RoomForCream
         {
@@ -59,7 +65,7 @@ namespace CowboyCafe.Data
             {
                 var instructions = new List<string>();
 
-                if (Ice) instructions.Add("add ice");
+                if (Ice) instructions.Add("Add Ice");
                 if (RoomForCream) instructions.Add("Room for Cream");
 
                 return instructions;

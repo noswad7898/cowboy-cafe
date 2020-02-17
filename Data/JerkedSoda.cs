@@ -6,27 +6,16 @@ namespace CowboyCafe.Data
 {
     public class JerkedSoda : Drink
     {
+        public SodaFlavor flavor;
         public SodaFlavor Flavor
         {
             get
             {
-                switch (Flavor)
-                {
-                    case SodaFlavor.CreamSoda:
-                        return SodaFlavor.CreamSoda;
-                    case SodaFlavor.OrangeSoda:
-                        return SodaFlavor.OrangeSoda;
-                    case SodaFlavor.Sarsaparilla:
-                        return SodaFlavor.Sarsaparilla;
-                    case SodaFlavor.BirchBeer:
-                        return SodaFlavor.BirchBeer;
-                    case SodaFlavor.RootBeer:
-                        return SodaFlavor.RootBeer;
-                    default:
-                        throw new NotImplementedException("Unknown Flavor");
-
-
-                }
+                return flavor;
+            }
+            set
+            {
+                flavor = value;
             }
         }
 
@@ -63,10 +52,11 @@ namespace CowboyCafe.Data
                 }
             }
         }
+        public bool ice = true;
         public override bool Ice
         {
-            get { return Ice; }
-            set { Ice = value; }
+            get { return ice; }
+            set { ice = value; }
         }
 
         public override List<string> SpecialInstructions
