@@ -78,11 +78,11 @@ namespace CowboyCafe.Data
                 switch (Size)
                 {
                     case Size.Small:
-                        return "Small Orange Soda";
+                        return "Small Orange Soda Jerked Soda";
                     case Size.Medium:
-                        return "Medium Orange Soda";
+                        return "Medium Orange Soda Jerked Soda";
                     case Size.Large:
-                        return "Large Orange Soda";
+                        return "Large Orange Soda Jerked Soda";
                     default:
                         return "Unknown Size";
                 }
@@ -92,11 +92,11 @@ namespace CowboyCafe.Data
                 switch (Size)
                 {
                     case Size.Small:
-                        return "Small Cream Soda";
+                        return "Small Cream Soda Jerked Soda";
                     case Size.Medium:
-                        return "Medium Cream Soda";
+                        return "Medium Cream Soda Jerked Soda";
                     case Size.Large:
-                        return "Large Cream Soda";
+                        return "Large Cream Soda Jerked Soda";
                     default:
                         return "Unknown Size";
                 }
@@ -106,11 +106,11 @@ namespace CowboyCafe.Data
                 switch (Size)
                 {
                     case Size.Small:
-                        return "Small Sarsparilla";
+                        return "Small Sarsparilla Jerked Soda";
                     case Size.Medium:
-                        return "Medium Sarsparilla";
+                        return "Medium Sarsparilla Jerked Soda";
                     case Size.Large:
-                        return "Large Sarparilla";
+                        return "Large Sarsparilla Jerked Soda";
                     default:
                         return "Unknown Size";
                 }
@@ -120,11 +120,11 @@ namespace CowboyCafe.Data
                 switch (Size)
                 {
                     case Size.Small:
-                        return "Small Root Beer";
+                        return "Small Root Beer Jerked Soda";
                     case Size.Medium:
-                        return "Medium Root Beer";
+                        return "Medium Root Beer Jerked Soda";
                     case Size.Large:
-                        return "Large Root Beer";
+                        return "Large Root Beer Jerked Soda";
                     default:
                         return "Unknown Size";
                 }
@@ -134,11 +134,11 @@ namespace CowboyCafe.Data
                 switch (Size)
                 {
                     case Size.Small:
-                        return "Small Birch Beer";
+                        return "Small Birch Beer Jerked Soda";
                     case Size.Medium:
-                        return "Medium Birch Beer";
+                        return "Medium Birch Beer Jerked Soda";
                     case Size.Large:
-                        return "Large Birch Beer";
+                        return "Large Birch Beer Jerked Soda";
                     default:
                         return "Unknown Size";
                 }

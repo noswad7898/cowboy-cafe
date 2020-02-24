@@ -116,11 +116,11 @@ namespace CowboyCafe.Data
                 switch (Size)
                 {
                     case Size.Small:
-                        return "Small Sweet Texas Tea";
+                        return "Small Texas Sweet Tea";
                     case Size.Medium:
-                        return "Medium Sweet Texas Tea";
+                        return "Medium Texas Sweet Tea";
                     case Size.Large:
-                        return "Large Sweet Texas Tea";
+                        return "Large Texas Sweet Tea";
                     default:
                         return "Unknown Side Size";
                 }
@@ -130,11 +130,11 @@ namespace CowboyCafe.Data
                 switch (Size)
                 {
                     case Size.Small:
-                        return "Small Plain Texas Tea";
+                        return "Small Texas Plain Tea";
                     case Size.Medium:
-                        return "Medium Plain Texas Tea";
+                        return "Medium Texas Plain Tea";
                     case Size.Large:
-                        return "Large Plain Texas Tea";
+                        return "Large Texas Plain Tea";
                     default:
                         return "Unknown Side Size";
                 }
