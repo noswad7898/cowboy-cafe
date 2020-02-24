@@ -71,5 +71,37 @@ namespace CowboyCafe.Data
                 return instructions;
             }
         }
+
+        public override string ToString()
+        {
+            if (decaf)
+            {
+                switch (Size)
+                {
+                    case Size.Small:
+                        return "Small Decaf Cowboy Coffee";
+                    case Size.Medium:
+                        return "Medium Decaf Cowboy Coffee";
+                    case Size.Large:
+                        return "Large Decaf Cowboy Coffee";
+                    default:
+                        return "Unknown Side Size";
+                }
+            }
+            else
+            {
+                switch (Size)
+                {
+                    case Size.Small:
+                        return "Small Cowboy Coffee";
+                    case Size.Medium:
+                        return "Medium Cowboy Coffee";
+                    case Size.Large:
+                        return "Large Cowboy Coffee";
+                    default:
+                        return "Unknown Side Size";
+                }
+            }
+        }
     }
 }

@@ -108,5 +108,37 @@ namespace CowboyCafe.Data
                 return instructions;
             }
         }
+
+        public override string ToString()
+        {
+            if (Sweet)
+            {
+                switch (Size)
+                {
+                    case Size.Small:
+                        return "Small Sweet Texas Tea";
+                    case Size.Medium:
+                        return "Medium Sweet Texas Tea";
+                    case Size.Large:
+                        return "Large Sweet Texas Tea";
+                    default:
+                        return "Unknown Side Size";
+                }
+            }
+            else
+            {
+                switch (Size)
+                {
+                    case Size.Small:
+                        return "Small Plain Texas Tea";
+                    case Size.Medium:
+                        return "Medium Plain Texas Tea";
+                    case Size.Large:
+                        return "Large Plain Texas Tea";
+                    default:
+                        return "Unknown Side Size";
+                }
+            }
+        }
     }
 }
