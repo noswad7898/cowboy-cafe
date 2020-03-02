@@ -19,40 +19,19 @@
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         <StackPanel>
-            <TextBlock TextAlignment ="Center"> Entrees</TextBlock>
-            <Button x:Name="AddAngryChicken" Click="AddAngryChicken_Click">Angry Chicken</Button>
-            <Button x:Name="AddCowpokeChili" Click="AddCowpokeChili_Click">Cowpoke Chili</Button>
-            <Button x:Name="AddPecosPulledPork" Click="AddPecosPulledPork_Click">Pecos Pulled Pork</Button>
-            <Button x:Name="AddRustlersRibs" Click="AddRustlerRibs_Click">Rustlers Ribs</Button>
-            <Button x:Name="AddTrailBurger" Click="AddTrailBurger_Click">Trail Burger</Button>
-            <Button x:Name="AddDakotaDoubleBurger" Click="AddDakotaDoubleBurger_Click">Dakota Double Burger</Button>
-            <Button x:Name="AddTexasTripleBurger" Click="AddTexasTripleBurger_Click">Texas Triple Burger</Button>
-            
+
+            <Button x:Name="ItemSelection" Click="ItemSelection_Click">Item Selection</Button>
+
         </StackPanel>
 
         <StackPanel Grid.Column="1">
-            <TextBlock TextAlignment ="Center"> Sides</TextBlock>
-            <Button x:Name="AddBakedBeans" Click="AddBakedBeans_Click"> Baked Beans</Button>
-            <Button x:Name="AddChiliCheeseFries" Click="AddChiliCheeseFries_Click">Chili Cheese Fries</Button>
-            <Button x:Name="AddCornDodgers" Click="AddCornDodgers_Click">Corn Dodgers</Button>
-            <Button x:Name="AddPandeCampo" Click="AddPandeCampo_Click">Pan de Campo</Button>
+            <Button x:Name="CancelOrder" Click="CancelOrder_Click">Cancel Order</Button>
+
         </StackPanel>
         <StackPanel Grid.Column="2">
-            <TextBlock TextAlignment ="Center"> Drinks</TextBlock>
-            <Button x:Name="AddJerkedSoda" Click="AddJerkedSoda_Click">Jerked Soda</Button>
-            <Button x:Name="AddTexasTea" Click="AddAngryTexasTea_Click">Texas Tea</Button>
-            <Button x:Name="AddCowboyCoffee" Click="AddCowboyCoffee_Click">Cowboy Coffee</Button>
-            <Button x:Name="AddWater" Click="AddWater_Click">Water</Button>
+            <Button x:Name="CompleteOrder" Click="CompleteOrder_Click">Complete Order</Button>
+
         </StackPanel>
-        <StackPanel Grid.Column="3">
-            <TextBlock TextAlignment ="Center"> Order</TextBlock>
-            <ListBox Name="OrderList">
-               
-                
-            </ListBox>
-        </StackPanel>
-      
-        
     </Grid>
 </UserControl>
     

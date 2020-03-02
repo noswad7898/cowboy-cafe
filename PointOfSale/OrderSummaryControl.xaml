@@ -13,12 +13,13 @@
         </Grid.ColumnDefinitions>
         <ListView>
 
-            <TextBlock TextAlignment ="Center"> Order </TextBlock>
+            <TextBlock TextAlignment ="Center"> Order</TextBlock>
         </ListView>
         <ListView Grid.Column="1">
 
-            <TextBlock TextAlignment ="Center"> Price</TextBlock>
+
         </ListView>
+        <TextBlock TextAlignment ="Center" Grid.Column="1"> Price</TextBlock>
 
     </Grid>
 </UserControl>

@@ -13,7 +13,18 @@ namespace CowboyCafe.Data
 
         public IEnumerable<IOrderItem> Items { get; }
 
-        public double Subtotal { get;  }
+        public double Subtotal
+        {
+            
+            get
+            {
+                foreach(item in items)
+                {
+                    Subtotal += IOrderItem.Price;
+                }
+                return Subtotal;
+            }
+        }
 
         public static uint OrderNumber { get; }
 
@@ -23,12 +34,18 @@ namespace CowboyCafe.Data
 
         public void Add(IOrderItem item)
         {
-
+            items.Add(item);
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Items"));
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Subtotal"));
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Price"));
         }
 
         public void Remove(IOrderItem item)
         {
-
+            items.Add(item);
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Items"));
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Subtotal"));
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Price"));
         }
 
     }
