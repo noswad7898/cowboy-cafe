@@ -12,9 +12,7 @@
         </Style>
     </UserControl.Resources>
     <Grid>
-        
-        
-            <Grid.ColumnDefinitions>
+        <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
                 <ColumnDefinition/>
                 <ColumnDefinition/>
@@ -38,16 +36,12 @@
                 <Button x:Name="AddCornDodgers" Click="AddCornDodgers_Click">Corn Dodgers</Button>
                 <Button x:Name="AddPandeCampo" Click="AddPandeCampo_Click">Pan de Campo</Button>
             </StackPanel>
-            <StackPanel Grid.Column="2">
-                <TextBlock TextAlignment ="Center"> Drinks</TextBlock>
-                <Button x:Name="AddJerkedSoda" Click="AddJerkedSoda_Click">Jerked Soda</Button>
-                <Button x:Name="AddTexasTea" Click="AddAngryTexasTea_Click">Texas Tea</Button>
-                <Button x:Name="AddCowboyCoffee" Click="AddCowboyCoffee_Click">Cowboy Coffee</Button>
-                <Button x:Name="AddWater" Click="AddWater_Click">Water</Button>
-            </StackPanel>
-            
-
-
-        
+        <StackPanel Grid.Column="2">
+            <TextBlock TextAlignment ="Center"> Drinks</TextBlock>
+            <Button x:Name="AddJerkedSoda" Click="AddJerkedSoda_Click">Jerked Soda</Button>
+            <Button x:Name="AddTexasTea" Click="AddAngryTexasTea_Click">Texas Tea</Button>
+            <Button x:Name="AddCowboyCoffee" Click="AddCowboyCoffee_Click">Cowboy Coffee</Button>
+            <Button x:Name="AddWater" Click="AddWater_Click">Water</Button>
+        </StackPanel>
     </Grid>
 </UserControl>
