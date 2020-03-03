@@ -30,6 +30,7 @@ namespace PointOfSale
             AddTrailBurger.Click += AddTrailBurger_Click;
             AddDakotaDoubleBurger.Click += AddDakotaDoubleBurger_Click;
             AddTexasTripleBurger.Click += AddTexasTripleBurger_Click;
+            AddAngryChicken.Click += AddAngryChicken_Click;
 
             //Sides
             AddCornDodgers.Click += AddCornDodgers_Click;
@@ -47,10 +48,10 @@ namespace PointOfSale
 
         private void AddAngryChicken_Click(object sender, RoutedEventArgs e)
         {
-            AngryChicken temp = new AngryChicken();
+            //AngryChicken temp = new AngryChicken();
             if(DataContext is Order order)
             {
-                order.Add(temp);
+                order.Add(new AngryChicken());
             }
         }
 

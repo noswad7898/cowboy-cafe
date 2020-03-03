@@ -16,11 +16,16 @@ namespace PointOfSale
     /// <summary>
     /// Interaction logic for UserControl1.xaml
     /// </summary>
-    public partial class OrderSummaryCOntrol : UserControl
+    public partial class OrderSummaryControl : UserControl
     {
-        public OrderSummaryCOntrol()
+        public OrderSummaryControl()
         {
             InitializeComponent();
+        }
+
+        private void ListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
         }
     }
 }

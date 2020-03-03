@@ -11,7 +11,12 @@ namespace CowboyCafe.Data
 
         private List<IOrderItem> items = new List<IOrderItem>();
 
-        public IEnumerable<IOrderItem> Items { get; }
+        public IEnumerable<IOrderItem> Items {
+            get
+            {
+                return items.ToArray();
+            }
+        }
 
         public double Subtotal
         {
@@ -44,7 +49,7 @@ namespace CowboyCafe.Data
             items.Add(item);
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Items"));
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Subtotal"));
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Price"));
+            //PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Price"));
         }
 
         public void Remove(IOrderItem item)
@@ -52,7 +57,7 @@ namespace CowboyCafe.Data
             items.Add(item);
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Items"));
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Subtotal"));
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Price"));
+            //PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Price"));
         }
 
     }

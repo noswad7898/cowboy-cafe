@@ -22,7 +22,19 @@ namespace PointOfSale
         public OrderControl()
         {
             InitializeComponent();
+
+            var order = new Order();
+            this.DataContext = order;
+
+            CompleteOrder.Click += CompleteOrder_Click;
+            CancelOrder.Click += CancelOrder_Click;
+
+
         }
+
+        
+
+        
 
         private void ItemSelection_Click(object sender, RoutedEventArgs e)
         {
