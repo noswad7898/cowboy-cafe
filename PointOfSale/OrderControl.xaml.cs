@@ -19,6 +19,9 @@ namespace PointOfSale
     /// </summary>
     public partial class OrderControl : UserControl
     {
+        /// <summary>
+        /// creates new order object and prepares complete/cancel order buttons
+        /// </summary>
         public OrderControl()
         {
             InitializeComponent();
@@ -35,17 +38,31 @@ namespace PointOfSale
         
 
         
-
+        /// <summary>
+        /// ???
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ItemSelection_Click(object sender, RoutedEventArgs e)
         {
 
         }
 
+        /// <summary>
+        /// handler for cancel order button
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void CancelOrder_Click(object sender, RoutedEventArgs e)
         {
             this.DataContext = new Order();
         }
 
+        /// <summary>
+        /// hadler for complete order button
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void CompleteOrder_Click(object sender, RoutedEventArgs e)
         {
             this.DataContext = new Order();

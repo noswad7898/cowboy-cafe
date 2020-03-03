@@ -4,6 +4,9 @@ using System.Text;
 
 namespace CowboyCafe.Data
 {
+    /// <summary>
+    /// Object class for all orderable items
+    /// </summary>
     public interface IOrderItem
     {
         double Price { get; }

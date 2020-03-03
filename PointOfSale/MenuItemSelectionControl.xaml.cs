@@ -22,6 +22,7 @@ namespace PointOfSale
         public MenuItemSelectionControl()
         {
             InitializeComponent();
+            // Button clicks
 
             //Entrees
             AddCowpokeChili.Click += AddCowpokeChili_Click;
@@ -46,15 +47,24 @@ namespace PointOfSale
 
         }
 
+        /// <summary>
+        /// Handler for angry chicken
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void AddAngryChicken_Click(object sender, RoutedEventArgs e)
         {
-            //AngryChicken temp = new AngryChicken();
+            
             if(DataContext is Order order)
             {
                 order.Add(new AngryChicken());
             }
         }
-
+        /// <summary>
+        /// Handler for cowpoke chili
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void AddCowpokeChili_Click(object sender, RoutedEventArgs e)
         {
             CowpokeChili temp = new CowpokeChili();
@@ -63,7 +73,11 @@ namespace PointOfSale
                 order.Add(temp);
             }
         }
-
+        /// <summary>
+        /// Handler for Pecos Pulled pork
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void AddPecosPulledPork_Click(object sender, RoutedEventArgs e)
         {
             PecosPulledPork temp = new PecosPulledPork();
@@ -72,7 +86,11 @@ namespace PointOfSale
                 order.Add(temp);
             }
         }
-
+        /// <summary>
+        /// Hander for Rustlers ribs 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void AddRustlerRibs_Click(object sender, RoutedEventArgs e)
         {
             RustlersRibs temp = new RustlersRibs();
@@ -81,7 +99,11 @@ namespace PointOfSale
                 order.Add(temp);
             }
         }
-
+        /// <summary>
+        /// handler for trail burger
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void AddTrailBurger_Click(object sender, RoutedEventArgs e)
         {
             TrailBurger temp = new TrailBurger();
@@ -90,7 +112,11 @@ namespace PointOfSale
                 order.Add(temp);
             }
         }
-
+        /// <summary>
+        /// handler for dakota double burger
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void AddDakotaDoubleBurger_Click(object sender, RoutedEventArgs e)
         {
             DakotaDoubleBurger temp = new DakotaDoubleBurger();
@@ -99,7 +125,11 @@ namespace PointOfSale
                 order.Add(temp);
             }
         }
-
+        /// <summary>
+        /// handler for texastripleburger
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void AddTexasTripleBurger_Click(object sender, RoutedEventArgs e)
         {
             TexasTripleBurger temp = new TexasTripleBurger();
@@ -108,7 +138,11 @@ namespace PointOfSale
                 order.Add(temp);
             }
         }
-
+        /// <summary>
+        /// handler for baked beans
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void AddBakedBeans_Click(object sender, RoutedEventArgs e)
         {
             BakedBeans temp = new BakedBeans();
@@ -117,7 +151,11 @@ namespace PointOfSale
                 order.Add(temp);
             }
         }
-
+        /// <summary>
+        /// handler for chili cheese fries
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void AddChiliCheeseFries_Click(object sender, RoutedEventArgs e)
         {
             ChiliCheeseFries temp = new ChiliCheeseFries();
@@ -126,7 +164,11 @@ namespace PointOfSale
                 order.Add(temp);
             }
         }
-
+        /// <summary>
+        /// handler for corn dodgers
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void AddCornDodgers_Click(object sender, RoutedEventArgs e)
         {
             CornDodgers temp = new CornDodgers();
@@ -135,7 +177,11 @@ namespace PointOfSale
                 order.Add(temp);
             }
         }
-
+        /// <summary>
+        /// handler for pan de campo
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void AddPandeCampo_Click(object sender, RoutedEventArgs e)
         {
             PanDeCampo temp = new PanDeCampo();
@@ -144,7 +190,11 @@ namespace PointOfSale
                 order.Add(temp);
             }
         }
-
+        /// <summary>
+        /// handler for jerked soda
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void AddJerkedSoda_Click(object sender, RoutedEventArgs e)
         {
             JerkedSoda temp = new JerkedSoda();
@@ -153,7 +203,11 @@ namespace PointOfSale
                 order.Add(temp);
             }
         }
-
+        /// <summary>
+        /// handler for cowboy coffee
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void AddCowboyCoffee_Click(object sender, RoutedEventArgs e)
         {
             CowboyCoffee temp = new CowboyCoffee();
@@ -162,7 +216,11 @@ namespace PointOfSale
                 order.Add(temp);
             }
         }
-
+        /// <summary>
+        /// handler for texas tea
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void AddTexasTea_Click(object sender, RoutedEventArgs e)
         {
             TexasTea temp = new TexasTea();
@@ -171,7 +229,11 @@ namespace PointOfSale
                 order.Add(temp);
             }
         }
-
+        /// <summary>
+        /// handler for water
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void AddWater_Click(object sender, RoutedEventArgs e)
         {
             Water temp = new Water();
