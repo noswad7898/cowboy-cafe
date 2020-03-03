@@ -11,15 +11,36 @@
             <ColumnDefinition Width="150"/>
             <ColumnDefinition Width="50"/>
         </Grid.ColumnDefinitions>
-        <ListView>
 
-            <TextBlock TextAlignment ="Center"> Order</TextBlock>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="20"/>
+            <RowDefinition/>
+            <RowDefinition Height="20"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Text="Order Number: " TextAlignment="Center" Grid.Row="0" Grid.Column="0"/>
+        <TextBlock Text="{Binding Path=OrderNumber}" TextAlignment="Left" Grid.Row="0" Grid.Column="1"/>
+
+        <TextBlock Text="Items" TextAlignment="Left" Grid.Row="1"/>
+
+        <TextBlock Text="Prices" TextAlignment="Left" Grid.Column="2" Grid.Row="1"/>
+
+        <ListView ItemsSource="{Binding Path=Items}" HorizontalContentAlignment="Stretch" Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="2">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel>
+                        <DockPanel HorizontalAlignment="Stretch">
+                            <TextBlock Text="{Binding}" Grid.Column="0" HorizontalAlignment="Left"/>
+                            <TextBlock Text="{Binding Path=Price}" HorizontalAlignment="Right" TextAlignment="Right" Grid.Column="1"/>
+                        </DockPanel>
+                    </StackPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
         </ListView>
-        <ListView Grid.Column="1">
 
-
-        </ListView>
-        <TextBlock TextAlignment ="Center" Grid.Column="1"> Price</TextBlock>
-
+        <TextBlock Text="Subtotal" TextAlignment="Left" VerticalAlignment="Bottom" Grid.Row="4"/>
+        <TextBlock x:Name="SubtotalPrice" TextAlignment="Left" VerticalAlignment="Bottom" Grid.Row="4" Grid.Column="2" Text="{Binding Path=Subtotal,StringFormat=c}"/>
+        
     </Grid>
 </UserControl>

@@ -18,20 +18,35 @@
             <ColumnDefinition/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <StackPanel>
+        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        
+        <StackPanel Grid.Column="0">
 
-            <Button x:Name="ItemSelection" Click="ItemSelection_Click">Item Selection</Button>
-
+            <Button x:Name="ItemSelection">
+                Item Selection
+            </Button>
         </StackPanel>
 
         <StackPanel Grid.Column="1">
-            <Button x:Name="CancelOrder" Click="CancelOrder_Click">Cancel Order</Button>
-
+            <Button x:Name="CancelOrder">
+                Cancel Order
+            </Button>
         </StackPanel>
+        
         <StackPanel Grid.Column="2">
-            <Button x:Name="CompleteOrder" Click="CompleteOrder_Click">Complete Order</Button>
-
+            <Button x:Name="CompleteOrder">
+                Complete Order
+            </Button>
         </StackPanel>
+
+        <local:OrderSummaryControl x:Name="SummaryColumn" Grid.Column="3" Grid.RowSpan="2"/>
+        <local:MenuItemSelectionControl x:Name="OrderButtons" VerticalAlignment="Bottom" Grid.ColumnSpan="3" Margin="0,0,10,-400"/>
+        
+
     </Grid>
 </UserControl>
     
