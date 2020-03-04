@@ -67,5 +67,20 @@ namespace PointOfSale
         {
             this.DataContext = new Order();
         }
+
+        public void OnMenuItemSelectionButtonClicked (object sander, RoutedEventArgs e)
+        {
+
+        }
+
+
+        /// <summary>
+        /// swaps item selection with item customization ui
+        /// </summary>
+        /// <param name="element"></param>
+        public void SwapScreen(FrameworkElement element)
+        {
+            Container.Child = element;
+        }
     }
 }

@@ -33,6 +33,7 @@
                         <DockPanel HorizontalAlignment="Stretch">
                             <TextBlock Text="{Binding}"/>
                             <TextBlock Text="{Binding Path=Price}" HorizontalAlignment="Right" TextAlignment="Right" Grid.Column="1"/>
+                            <TextBlock Text="{Binding Path=SpecialInstructions}" Grid.Column="1"/>
                         </DockPanel>
                     </StackPanel>
                 </DataTemplate>
