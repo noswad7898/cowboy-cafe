@@ -1,11 +1,69 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.ComponentModel;
 
 namespace CowboyCafe.Data
 {
-    public class JerkedSoda : Drink
+    public class JerkedSoda : Drink, INotifyPropertyChanged
     {
+        /// <summary>
+        /// event handler for when properties change
+        /// </summary>
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        /// <summary>
+        /// handler for the case when the side/drink is small
+        /// </summary>
+        public bool isSmall = true;
+        public bool IsSmall
+        {
+            get
+            {
+                return isSmall;
+            }
+            set
+            {
+                Size = Size.Small;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Price"));
+            }
+        }
+        /// <summary>
+        /// handler for when the side/drink is medium
+        /// </summary>
+        public bool isMedium = false;
+        public bool IsMedium
+        {
+            get
+            {
+                return isMedium;
+            }
+            set
+            {
+                Size = Size.Medium;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Price"));
+            }
+
+        }
+        /// <summary>
+        /// handler for when the side/drink is large
+        /// </summary>
+        public bool isLarge = false;
+        public bool IsLarge
+        {
+            get
+            {
+                return isLarge;
+            }
+            set
+            {
+                Size = Size.Large;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Price"));
+            }
+        }
+        /// <summary>
+        /// handler for flavor enum
+        /// </summary>
         public SodaFlavor flavor;
         public SodaFlavor Flavor
         {
@@ -16,9 +74,13 @@ namespace CowboyCafe.Data
             set
             {
                 flavor = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Flavor"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
             }
         }
-
+        /// <summary>
+        /// price based on size
+        /// </summary>
         public override double Price
         {
             get
@@ -35,7 +97,9 @@ namespace CowboyCafe.Data
                 }
             }
         }
-
+        /// <summary>
+        /// calories based on size
+        /// </summary>
         public override uint Calories
         {
             get
@@ -52,13 +116,18 @@ namespace CowboyCafe.Data
                 }
             }
         }
+        /// <summary>
+        /// handler for if there is ice
+        /// </summary>
         public bool ice = true;
         public override bool Ice
         {
             get { return ice; }
             set { ice = value; }
         }
-
+        /// <summary>
+        /// handler for special instructions
+        /// </summary>
         public override List<string> SpecialInstructions
         {
             get
@@ -70,7 +139,10 @@ namespace CowboyCafe.Data
                 return instructions;
             }
         }
-
+        /// <summary>
+        /// order item description
+        /// </summary>
+        /// <returns></returns>
         public override string ToString()
         {
             if(Flavor == SodaFlavor.OrangeSoda)

@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="PointOfSale.CustomizationScreens.CowpokeChiliCustomization"
+﻿<UserControl x:Class="PointOfSale.CustomizationScreens.RustlersRibsCustomization"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -7,16 +7,14 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <StackPanel >
-        <TextBlock FontSize="40">Customize this Chili!</TextBlock>
+        <TextBlock FontSize="40">Customize this Rustlers Ribs!</TextBlock>
         <StackPanel Orientation="Horizontal">
-            <CheckBox IsChecked="{Binding Path=Cheese}"/>
-            <TextBlock Text="Cheese"/>
-            <CheckBox IsChecked="{Binding Path=SourCream}"/>
-            <TextBlock Text="Sour Cream"/>
-            <CheckBox IsChecked="{Binding Path=GreenOnions}"/>
-            <TextBlock Text="Green Onions"/>
-            <CheckBox IsChecked="{Binding Path=TortillaStrips}"/>
-            <TextBlock Text="Tortilla Strips"/>
+            <TextBlock Text="Size " VerticalAlignment="Center"/>
+            <ComboBox>
+                <ComboBoxItem IsSelected="True">Small</ComboBoxItem>
+                <ComboBoxItem>Medium</ComboBoxItem>
+                <ComboBoxItem>Large</ComboBoxItem>
+            </ComboBox>
         </StackPanel>
     </StackPanel>
 </UserControl>

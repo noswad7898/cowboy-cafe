@@ -1,0 +1,29 @@
+﻿<UserControl x:Class="PointOfSale.CustomizationScreens.JerkedSodaCustomization"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:PointOfSale.CustomizationScreens"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <StackPanel >
+        <TextBlock FontSize="40">Customize this Jerked Soda!</TextBlock>
+        <StackPanel Orientation="Horizontal">
+            <TextBlock Text="Size " VerticalAlignment="Center"/>
+            <ComboBox>
+                <ComboBoxItem IsSelected="{Binding Path=IsSmall}">Small</ComboBoxItem>
+                <ComboBoxItem IsSelected="{Binding Path=IsMedium}">Medium</ComboBoxItem>
+                <ComboBoxItem IsSelected="{Binding Path=IsLarge}">Large</ComboBoxItem>
+            </ComboBox>
+            <TextBlock Text="Flavor " VerticalAlignment="Center"/>
+            <ComboBox>
+                <ComboBoxItem IsSelected="True">Cream Soda</ComboBoxItem>
+                <ComboBoxItem>Orange Soda</ComboBoxItem>
+                <ComboBoxItem>Sarsparilla</ComboBoxItem>
+                <ComboBoxItem>Birch Beer</ComboBoxItem>
+                <ComboBoxItem>Root Beer</ComboBoxItem>
+            </ComboBox>
+            
+        </StackPanel>
+    </StackPanel>
+</UserControl>

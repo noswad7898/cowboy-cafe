@@ -41,7 +41,10 @@ namespace CowboyCafe.Data
                 return instructions;
             }
         }
-
+        /// <summary>
+        /// order item description
+        /// </summary>
+        /// <returns></returns>
         public override string ToString()
         {
             return "Rustler's Ribs";

@@ -11,6 +11,7 @@ namespace CowboyCafe.Data
     {
 
         public event PropertyChangedEventHandler PropertyChanged;
+
         private bool cheese = true;
         /// <summary>
         /// If the chili is topped with cheese
@@ -33,7 +34,12 @@ namespace CowboyCafe.Data
         public bool SourCream
         {
             get { return sourCream; }
-            set { sourCream = value; }
+            set
+            {
+                sourCream = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Cheese"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+            }
         }
 
         private bool greenOnions = true;
@@ -43,7 +49,12 @@ namespace CowboyCafe.Data
         public bool GreenOnions
         {
             get { return greenOnions; }
-            set { greenOnions = value; }
+            set
+            {
+                greenOnions = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Cheese"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+            }
         }
 
         private bool tortillaStrips = true;
@@ -53,7 +64,12 @@ namespace CowboyCafe.Data
         public bool TortillaStrips
         {
             get { return tortillaStrips; }
-            set { tortillaStrips = value; }
+            set
+            {
+                tortillaStrips = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Cheese"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+            }
         }
 
         /// <summary>
@@ -95,6 +111,10 @@ namespace CowboyCafe.Data
                 return instructions;
             }
         }
+        /// <summary>
+        /// order item description
+        /// </summary>
+        /// <returns></returns>
         public override string ToString()
         {
             return "Cowpoke Chili";
