@@ -18,12 +18,12 @@
             <ColumnDefinition/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        
+
         <Grid.RowDefinitions>
             <RowDefinition Height="50"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        
+
         <StackPanel Grid.Column="0">
 
             <Button x:Name="ItemSelection">
@@ -36,7 +36,7 @@
                 Cancel Order
             </Button>
         </StackPanel>
-        
+
         <StackPanel Grid.Column="2">
             <Button x:Name="CompleteOrder">
                 Complete Order
@@ -44,12 +44,9 @@
         </StackPanel>
 
         <local:OrderSummaryControl x:Name="SummaryColumn" Grid.Column="3" Grid.RowSpan="2"/>
-        <Border Name="Container">
-            <local:MenuItemSelectionControl x:Name="OrderButtons" VerticalAlignment="Bottom" Grid.ColumnSpan="3" Margin="0,0,10,-400"/>
+        <Border Name="Container"  Grid.ColumnSpan="3" Grid.Row="1">
+            <local:MenuItemSelectionControl x:Name="OrderButtons" VerticalAlignment="Top"  Loaded="OrderButtons_Loaded"/>
         </Border>
-        
-        
-
     </Grid>
 </UserControl>
     

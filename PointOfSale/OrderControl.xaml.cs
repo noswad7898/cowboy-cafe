@@ -31,23 +31,19 @@ namespace PointOfSale
 
             CompleteOrder.Click += CompleteOrder_Click;
             CancelOrder.Click += CancelOrder_Click;
+            ItemSelection.Click += ItemSelection_Click1;
 
 
         }
-
-        
-
-        
         /// <summary>
         /// ???
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void ItemSelection_Click(object sender, RoutedEventArgs e)
+        private void ItemSelection_Click1(object sender, RoutedEventArgs e)
         {
-            
+            SwapScreen(new MenuItemSelectionControl());
         }
-
         /// <summary>
         /// handler for cancel order button
         /// </summary>
@@ -68,7 +64,7 @@ namespace PointOfSale
             this.DataContext = new Order();
         }
 
-        public void OnMenuItemSelectionButtonClicked (object sander, RoutedEventArgs e)
+        public void OnMenuItemSelectionButtonClicked (object sender, RoutedEventArgs e)
         {
             Container.Child = new MenuItemSelectionControl();
         }
@@ -81,6 +77,11 @@ namespace PointOfSale
         public void SwapScreen(FrameworkElement element)
         {
             Container.Child = element;
+        }
+
+        private void OrderButtons_Loaded(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
