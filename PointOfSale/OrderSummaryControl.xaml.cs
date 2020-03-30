@@ -70,7 +70,7 @@ namespace PointOfSale
                 AngryChicken item = e.AddedItems[0] as AngryChicken;
                 if (DataContext is Order order)
                 {
-                    var screen = new AngryChickenCustomization();
+                    var screen = new AngryChickenCustomization(DataContext);
                     screen.DataContext = item;
                     orderControl?.SwapScreen(screen);
                 }
@@ -81,7 +81,7 @@ namespace PointOfSale
                 CowpokeChili item = e.AddedItems[0] as CowpokeChili;
                 if (DataContext is Order order)
                 {
-                    var screen = new CowpokeChiliCustomization();
+                    var screen = new CowpokeChiliCustomization(DataContext);
                     screen.DataContext = item;
                     orderControl?.SwapScreen(screen);
                 }
