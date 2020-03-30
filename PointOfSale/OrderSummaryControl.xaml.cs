@@ -31,11 +31,12 @@ namespace PointOfSale
     /// </summary>
     public partial class OrderSummaryControl : UserControl
     {
+        // Initialize component
         public OrderSummaryControl()
         {
             InitializeComponent();
         }
-
+        // Deletes menu items when x button is pressed
         private void DeleteItemButton_Click(object sender, RoutedEventArgs e)
         {
             var orderControl = this.FindAncestor<OrderControl>();
@@ -45,45 +46,128 @@ namespace PointOfSale
                 order.Remove(button.DataContext as IOrderItem);
             }
         }
-
+        /// <summary>
+        /// allows existing order list items to be reopened to edit its properties
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void OrderListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             if(OrderListView.SelectedItem == null)
             {
                 return;
             }
-            string itemString = OrderListView.SelectedItem.ToString();
-            if (itemString.Contains("RustlersRibs"))
+            
+            if (sender is ListBox list)
             {
-                var orderControl = this.FindAncestor<OrderControl>();
-                RustlersRibs item = e.AddedItems[0] as RustlersRibs;
-                if(DataContext is Order order)
+                if (list.SelectedItem is IOrderItem item)
                 {
-                    var screen = new RustlersRibsCustomization();
-                    screen.DataContext = item;
-                    orderControl?.SwapScreen(screen);
-                }
-            }
-            if (itemString.Contains("AngryChicken"))
-            {
-                var orderControl = this.FindAncestor<OrderControl>();
-                AngryChicken item = e.AddedItems[0] as AngryChicken;
-                if (DataContext is Order order)
-                {
-                    var screen = new AngryChickenCustomization(DataContext);
-                    screen.DataContext = item;
-                    orderControl?.SwapScreen(screen);
-                }
-            }
-            if (itemString.Contains("CowpokeChili"))
-            {
-                var orderControl = this.FindAncestor<OrderControl>();
-                CowpokeChili item = e.AddedItems[0] as CowpokeChili;
-                if (DataContext is Order order)
-                {
-                    var screen = new CowpokeChiliCustomization(DataContext);
-                    screen.DataContext = item;
-                    orderControl?.SwapScreen(screen);
+                    list.SelectedItem = null;
+                    if(item is AngryChicken ac)
+                    {
+                        var orderControl = this.FindAncestor<OrderControl>();
+                        var screen = new AngryChickenCustomization(DataContext);
+                        screen.DataContext = ac;
+                        orderControl?.SwapScreen(screen);
+                    }
+                    if (item is CowpokeChili cpc)
+                    {
+                        var orderControl = this.FindAncestor<OrderControl>();
+                        var screen = new CowpokeChiliCustomization(DataContext);
+                        screen.DataContext = cpc;
+                        orderControl?.SwapScreen(screen);
+                    }
+                    if (item is DakotaDoubleBurger ddb)
+                    {
+                        var orderControl = this.FindAncestor<OrderControl>();
+                        var screen = new DakotaDoubleCustomization(DataContext);
+                        screen.DataContext = ddb;
+                        orderControl?.SwapScreen(screen);
+                    }
+                    if (item is PecosPulledPork ppp)
+                    {
+                        var orderControl = this.FindAncestor<OrderControl>();
+                        var screen = new PecosPulledPorkCustomization(DataContext);
+                        screen.DataContext = ppp;
+                        orderControl?.SwapScreen(screen);
+                    }
+                    if (item is RustlersRibs rr)
+                    {
+                        var orderControl = this.FindAncestor<OrderControl>();
+                        var screen = new RustlersRibsCustomization();
+                        screen.DataContext = rr;
+                        orderControl?.SwapScreen(screen);
+                    }
+                    if (item is TexasTripleBurger ttb)
+                    {
+                        var orderControl = this.FindAncestor<OrderControl>();
+                        var screen = new TexasTripleCustomization(DataContext);
+                        screen.DataContext = ttb;
+                        orderControl?.SwapScreen(screen);
+                    }
+                    if (item is TrailBurger tb)
+                    {
+                        var orderControl = this.FindAncestor<OrderControl>();
+                        var screen = new TrailBurgerCustomization(DataContext);
+                        screen.DataContext = tb;
+                        orderControl?.SwapScreen(screen);
+                    }
+                    if (item is CowboyCoffee cc)
+                    {
+                        var orderControl = this.FindAncestor<OrderControl>();
+                        var screen = new CowboyCoffeeCustomization(DataContext);
+                        screen.DataContext = cc;
+                        orderControl?.SwapScreen(screen);
+                    }
+                    if (item is JerkedSoda js)
+                    {
+                        var orderControl = this.FindAncestor<OrderControl>();
+                        var screen = new JerkedSodaCustomization(DataContext);
+                        screen.DataContext = js;
+                        orderControl?.SwapScreen(screen);
+                    }
+                    if (item is TexasTea tt)
+                    {
+                        var orderControl = this.FindAncestor<OrderControl>();
+                        var screen = new TexasTeaCustomization(DataContext);
+                        screen.DataContext = tt;
+                        orderControl?.SwapScreen(screen);
+                    }
+                    if (item is Water w)
+                    {
+                        var orderControl = this.FindAncestor<OrderControl>();
+                        var screen = new WaterCustomization(DataContext);
+                        screen.DataContext = w;
+                        orderControl?.SwapScreen(screen);
+                    }
+                    if (item is BakedBeans bb)
+                    {
+                        var orderControl = this.FindAncestor<OrderControl>();
+                        var screen = new SideSizeCustomization(DataContext);
+                        screen.DataContext = bb;
+                        orderControl?.SwapScreen(screen);
+                    }
+                    if (item is ChiliCheeseFries ccf)
+                    {
+                        var orderControl = this.FindAncestor<OrderControl>();
+                        var screen = new SideSizeCustomization(DataContext);
+                        screen.DataContext = ccf;
+                        orderControl?.SwapScreen(screen);
+                    }
+                    if (item is CornDodgers cd)
+                    {
+                        var orderControl = this.FindAncestor<OrderControl>();
+                        var screen = new SideSizeCustomization(DataContext);
+                        screen.DataContext = cd;
+                        orderControl?.SwapScreen(screen);
+                    }
+                    if (item is PanDeCampo pdc)
+                    {
+                        var orderControl = this.FindAncestor<OrderControl>();
+                        var screen = new SideSizeCustomization(DataContext);
+                        screen.DataContext = pdc;
+                        orderControl?.SwapScreen(screen);
+                    }
                 }
             }
         }
