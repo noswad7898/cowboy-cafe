@@ -35,6 +35,13 @@ namespace CowboyCafe.Data
         /// Property to get or set the subtotal of the current order
         /// </summary>
         public double Subtotal { get; private set; }
+        /// <summary>
+        /// Property to get total after tax
+        /// </summary>
+        public double Total
+        {
+            get { return Math.Round(Subtotal * 1.16, 2); }
+        }
 
         /// <summary>
         /// Property to get the current order number
@@ -108,6 +115,7 @@ namespace CowboyCafe.Data
         {
             /* Invoke all events to ensure you don't miss anything */
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Subtotal"));
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Total"));
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Items"));
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("ItemPrices"));
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));

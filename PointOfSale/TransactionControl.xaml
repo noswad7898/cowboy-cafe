@@ -1,0 +1,71 @@
+﻿<UserControl x:Class="PointOfSale.TransactionControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:PointOfSale"
+             mc:Ignorable="d" 
+             d:DesignHeight="620" d:DesignWidth="580">
+    <Grid>
+        <!--Define columns for entire design-->
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="380"/>
+            <ColumnDefinition Width="200"/>
+        </Grid.ColumnDefinitions>
+        <!--localize OrderSummaryControl-->
+        <Grid Grid.Column="0" Width="380" Margin="0,0,0,-204">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="725"/>
+                <RowDefinition Height="100"/>
+            </Grid.RowDefinitions>
+            <local:OrderSummaryControl Grid.Column="0" Margin="0,0,0,149"/>
+            <Popup Placement="Center" Name="ReadErrorPopup" Height="150" Width="250" IsOpen="False" OpacityMask="White">
+                <TextBlock Text="Read Error"/>
+            </Popup>
+            <Popup Placement="Center" Name="UnknownErrorPopup" Height="150" Width="250" IsOpen="False" OpacityMask="White">
+                <TextBlock Text="Unknown Error"/>
+            </Popup>
+            <Popup Placement="Center" Name="InsufficientFunds" Height="150" Width="250" IsOpen="False" OpacityMask="White">
+                <TextBlock Text="InsufficientFunds"/>
+            </Popup>
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="3*"/>
+                    <ColumnDefinition Width="2*"/>
+                </Grid.ColumnDefinitions>
+                <!--Text block stating "Total (16% tax):"-->
+                <TextBlock Background="#906b53" FontWeight="Bold" FontSize="30" Margin="0,-206,0,206">
+                    Total (16% tax):
+                </TextBlock>
+                <!--Text block bount to "Total"-->
+                <TextBlock Text="{Binding Path=Total, StringFormat=c}" FontSize="30" Background="#906b53" Grid.Column="1" Margin="0,-206,0,206"/>
+            </Grid>
+        </Grid>
+        <!--Define Rows in Column 1 (Credit, Cash, Canacel)-->
+        <Grid Grid.Column="1" Width="200">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+            </Grid.RowDefinitions>
+            <!--Create Credit Button with event "OnCreditSelect"-->
+            <Grid Grid.Row="0">
+                <Button Click="OnCreditSelect" FontSize="30" FontWeight="Bold" BorderBrush="Black" BorderThickness="3" Background="#906b53">
+                    Credit
+                </Button>
+            </Grid>
+            <!--Create Cash Button with event "OnCashSelect"-->
+            <Grid Grid.Row="1">
+                <Button Click="OnCashSelect" FontSize="30" FontWeight="Bold" BorderBrush="Black" BorderThickness="3" Background="#906b53">
+                    Cash
+                </Button>
+            </Grid>
+            <!--Create Cancel Button with event "OnCancelSelect"-->
+            <Grid Grid.Row="2">
+                <Button Click="OnCancelSelect" FontSize="30" FontWeight="Bold" BorderBrush="Black" BorderThickness="3" Background="#906b53">
+                    Cancel
+                </Button>
+            </Grid>
+        </Grid>
+    </Grid>
+</UserControl>

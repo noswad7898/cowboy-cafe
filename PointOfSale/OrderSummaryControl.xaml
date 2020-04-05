@@ -15,10 +15,10 @@
     <Grid>
         <!--Create 4 rows for the controls-->
         <Grid.RowDefinitions>
-            <RowDefinition Height="75"/>
-            <RowDefinition Height="525"/>
-            <RowDefinition Height="50"/>
-            <RowDefinition Height="75"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="7*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
         </Grid.RowDefinitions>
 
         <!--Everything in this grid block only happens in the first row-->
@@ -34,7 +34,7 @@
                    Grid.Column="0" 
                    Text="Cowboy Cafe&#x0a;Order #:" 
                    FontFamily="Cambria" 
-                   FontSize="30"
+                   FontSize="25"
                    Foreground="#5DADEC"/>
 
             <!--Binds to the current order number for display-->

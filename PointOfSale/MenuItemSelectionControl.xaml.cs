@@ -4,15 +4,12 @@
  * Purpose: Backend logic for the user controls
  */
 using System;
-
 using System.Windows;
 using System.Windows.Controls;
-
 using CowboyCafe.Data;
 using CowboyCafe.Data.Entrees;
 using CowboyCafe.Data.Sides;
 using CowboyCafe.Data.Drinks;
-
 using PointOfSale.ExtensionMethods;
 using PointOfSale.CustomizationScreens;
 

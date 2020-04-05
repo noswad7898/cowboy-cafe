@@ -28,8 +28,7 @@ namespace PointOfSale
         /// <param name="e"></param>
         private void CompleteOrderButton_Click(object sender, RoutedEventArgs e)
         {
-            Order o = (Order)DataContext;
-            DataContext = new Order(o.OrderNumber + 1);
+            Container.Child = new TransactionControl();
         }
 
         /// <summary>
@@ -37,7 +36,7 @@ namespace PointOfSale
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void CancelOrderButton_Click(object sender, RoutedEventArgs e)
+        public void CancelOrderButton_Click(object sender, RoutedEventArgs e)
         {
             Order o = (Order)DataContext;
             DataContext = new Order(o.OrderNumber + 1);
