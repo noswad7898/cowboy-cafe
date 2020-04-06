@@ -13,7 +13,11 @@ using System.Windows.Shapes;
 using PointOfSale.ExtensionMethods;
 using CowboyCafe.Data;
 using CashRegister;
-
+/*
+ * Author: Dawson Field
+ * Class: TransactionControl.xaml.cs
+ * Purpose: Backend logic for the TransactionControl.xaml.cs class
+ */
 namespace PointOfSale
 {
     /// <summary>
@@ -53,12 +57,16 @@ namespace PointOfSale
                     InsufficientFunds.IsOpen = true;
                     return;
                 }
+                var orderControl = this.FindAncestor<OrderControl>();
+                FrameworkElement screen = new MenuItemSelectionControl();
+                orderControl.SwapScreen(screen);
+                orderControl.CancelOrderButton_Click(this, e);
             }
-            
         }
 
         private void OnCashSelect(object sender, RoutedEventArgs e)
         {
+            PrintRecipt(true);
             var orderControl = this.FindAncestor<OrderControl>();
             FrameworkElement screen = new CashRegisterControl();
             orderControl.SwapScreen(screen);
@@ -91,16 +99,17 @@ namespace PointOfSale
                     printer.Print("\t");
                     printer.Print(item.Price.ToString());
                     printer.Print("\n\t");
-                    StringBuilder builder = new StringBuilder();
-                    foreach(string SpecialInstructions  in order.SpecialInstructions)
+                    int length = item.SpecialInstructions.Count;
+                    if(length > 0)
                     {
-                        builder.Append(SpecialInstructions);
+                        for(int i = 0; i < length; i++)
+                        {
+                            printer.Print("\t" + item.SpecialInstructions[i]);
+                            printer.Print("\n");
+                        }
                     }
-                    string result = builder.ToString();
-                    printer.Print(result);
                     printer.Print("\n");
                 }
-
                 printer.Print("\n");
                 printer.Print("Subtotal: \t");
                 printer.Print(order.Subtotal.ToString());

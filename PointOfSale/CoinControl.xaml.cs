@@ -11,7 +11,11 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using CashRegister;
-
+/*
+ * Author: Dawson Field
+ * Class: CoinControl.xaml.cs
+ * Purpose: Backend logic for the CoinControl.xaml.cs class
+ */
 namespace PointOfSale
 {
     /// <summary>

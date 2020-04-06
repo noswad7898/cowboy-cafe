@@ -3,7 +3,11 @@ using System.Collections.Generic;
 using System.Text;
 using System.ComponentModel;
 using CashRegister;
-
+/*
+ * Author: Dawson Field
+ * Class: CashRegisterModelView.cs
+ * Purpose: Backend logic for the CashRegisterModelView.cs class
+ */
 namespace PointOfSale
 {
     public class CashRegisterModelView: INotifyPropertyChanged

@@ -17,7 +17,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documentation", "Documentation", "{7814A4DF-FFCF-4FFF-A076-E640704DB91D}"
 	ProjectSection(SolutionItems) = preProject
 		..\..\..\Downloads\CowboyCafe.Data (1).pdf = ..\..\..\Downloads\CowboyCafe.Data (1).pdf
-		..\..\..\Downloads\CowboyCafe.PointOfSale (1).pdf = ..\..\..\Downloads\CowboyCafe.PointOfSale (1).pdf
+		..\..\..\Downloads\CowboyCafe.PointOfSale (2).pdf = ..\..\..\Downloads\CowboyCafe.PointOfSale (2).pdf
 	EndProjectSection
 EndProject
 Global

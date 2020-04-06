@@ -10,7 +10,13 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-
+using PointOfSale.ExtensionMethods;
+using CowboyCafe.Data;
+/*
+ * Author: Dawson Field
+ * Class: CashRegisterControl.xaml.cs
+ * Purpose: Backend logic for the CashRegisterControl.xaml class
+ */
 namespace PointOfSale
 {
     /// <summary>
@@ -23,6 +29,12 @@ namespace PointOfSale
             InitializeComponent();
         }
 
-        
+        private void OnCashComplete(object sender, RoutedEventArgs e)
+        {
+            var orderControl = this.FindAncestor<OrderControl>();
+            FrameworkElement screen = new MenuItemSelectionControl();
+            orderControl.SwapScreen(screen);
+            orderControl.CancelOrderButton_Click(this, e);
+        }
     }
 }

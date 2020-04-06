@@ -1,4 +1,8 @@
-﻿<UserControl x:Class="PointOfSale.TransactionControl"
+﻿<!--
+    Author: Dawson Field
+    Class: PointOfSale.TransactionControl.xaml
+    Purpose: Windows for handling transactions after complete order button is pressed-->
+    <UserControl x:Class="PointOfSale.TransactionControl"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -18,6 +22,7 @@
                 <RowDefinition Height="725"/>
                 <RowDefinition Height="100"/>
             </Grid.RowDefinitions>
+            <!--Card error popups-->
             <local:OrderSummaryControl Grid.Column="0" Margin="0,0,0,149"/>
             <Popup Placement="Center" Name="ReadErrorPopup" Height="150" Width="250" IsOpen="False" OpacityMask="White">
                 <TextBlock Text="Read Error"/>
