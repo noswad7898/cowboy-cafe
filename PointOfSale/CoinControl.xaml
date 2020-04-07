@@ -12,6 +12,7 @@
              Width="100" Height="100"
              d:DesignHeight="100" d:DesignWidth="100">
     <Border BorderBrush="Gray" BorderThickness="1" Padding="5">
+        <!-- design for the coin icon-->
         <Grid>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="4*"/>
