@@ -1,0 +1,117 @@
+﻿@page
+@using CowboyCafe.Data.Entrees;
+@using CowboyCafe.Data.Sides;
+@using CowboyCafe.Data.Enums;
+@using CowboyCafe.Data.Drinks;
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+<!--
+    Author: Dawson Field
+    File: Index.cshtml
+    About: The home page of the website, Shows wwelcome message and lists menu items, prices and calories. organized by catrgory.
+-->
+<h1>Cowboy Cafe</h1>
+<p>
+    We at Cowboy Cafe are proud to bring you authentic trail meals from the American West.
+    Shake off the dust on your boots and sake your thirst with one of our old-fashioned hand-jerked sodas.
+    Dip your Pan de Campo into a bowl of beans. Or conquer the the mighty Texas Triple Burger! You’ve had a hard ride - so take it easy with us.
+</p>
+<!--Displays Entrees category and all entree items with details below it-->
+<h2>Entrees</h2>
+<div class="menu-item">
+    @{
+        string entreesString = null;
+        var entrees = Menu.Entrees();
+        foreach (Entree item in entrees)
+        {
+            entreesString += item.ToString();
+            entreesString += "  Price $";
+            entreesString += String.Format("{0:C}", item.Price.ToString());
+            entreesString += ", Calories ";
+            entreesString += item.Calories;
+            entreesString += ". ";
+
+        }
+    }
+    @entreesString
+</div>
+<!--Displays sides category and all side items with details below it-->
+<h2>Sides</h2>
+<div class="menu-item">
+    @{
+        string sidesString = null;
+        var sides = Menu.Sides();
+        foreach (Side item in sides)
+        {
+            item.Size = Size.Small;
+            {
+                sidesString += item.ToString();
+                sidesString += "  Price $";
+                sidesString += String.Format("{0:C}", item.Price.ToString());
+                sidesString += ", Calories ";
+                sidesString += item.Calories;
+                sidesString += ". ";
+            }
+            item.Size = Size.Medium;
+            {
+                sidesString += item.ToString();
+                sidesString += "  Price $";
+                sidesString += String.Format("{0:C}", item.Price.ToString());
+                sidesString += ", Calories ";
+                sidesString += item.Calories;
+                sidesString += ". ";
+            }
+            item.Size = Size.Large;
+            {
+                sidesString += item.ToString();
+                sidesString += "  Price $";
+                sidesString += String.Format("{0:C}", item.Price.ToString());
+                sidesString += ", Calories ";
+                sidesString += item.Calories;
+                sidesString += ". ";
+            }
+        }
+    }
+    @sidesString
+</div>
+<!--Displays drinks category and all drink items with details below it-->
+<h2>Drinks</h2>
+<div class="menu-item">
+    @{
+        string drinksString = null;
+        var drinks = Menu.Drinks();
+        foreach (Drink item in drinks)
+        {
+            item.Size = Size.Small;
+            {
+                drinksString += item.ToString();
+                drinksString += "  Price $";
+                drinksString += String.Format("{0:C}", item.Price.ToString());
+                drinksString += ", Calories ";
+                drinksString += item.Calories;
+                drinksString += ". ";
+            }
+            item.Size = Size.Medium;
+            {
+                drinksString += item.ToString();
+                drinksString += "  Price $";
+                drinksString += String.Format("{0:C}", item.Price.ToString());
+                drinksString += ", Calories ";
+                drinksString += item.Calories;
+                drinksString += ". ";
+            }
+            item.Size = Size.Large;
+            {
+                drinksString += item.ToString();
+                drinksString += "  Price $";
+                drinksString += String.Format("{0:C}", item.Price.ToString());
+                drinksString += ", Calories ";
+                drinksString += item.Calories;
+                drinksString += ". ";
+            }
+        }
+    }
+    @drinksString
+</div>
