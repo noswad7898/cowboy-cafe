@@ -5,6 +5,8 @@ using CowboyCafe.Data;
 using CowboyCafe.Data.Drinks;
 using CowboyCafe.Data.Entrees;
 using CowboyCafe.Data.Sides;
+
+using CowboyCafe.Data.Enums;
 /// <summary>
 /// Author: Dawson Field
 /// Class: Manu.cs
@@ -44,14 +46,21 @@ namespace CowboyCafe.Data
         public static IEnumerable<IOrderItem> Sides()
         {
             var sides = new List<IOrderItem>();
-            BakedBeans bakedBeans = new BakedBeans();
-            sides.Add(bakedBeans);
-            ChiliCheeseFries chiliCheeseFries = new ChiliCheeseFries();
-            sides.Add(chiliCheeseFries);
-            CornDodgers cornDodgers = new CornDodgers();
-            sides.Add(cornDodgers);
-            PanDeCampo panDeCampo = new PanDeCampo();
-            sides.Add(panDeCampo);
+            foreach(Size size in Enum.GetValues(typeof(Size)))
+            {
+                BakedBeans bakedBeans = new BakedBeans();
+                bakedBeans.Size = size;
+                sides.Add(bakedBeans);
+                ChiliCheeseFries chiliCheeseFries = new ChiliCheeseFries();
+                chiliCheeseFries.Size = size;
+                sides.Add(chiliCheeseFries);
+                CornDodgers cornDodgers = new CornDodgers();
+                cornDodgers.Size = size;
+                sides.Add(cornDodgers);
+                PanDeCampo panDeCampo = new PanDeCampo();
+                panDeCampo.Size = size;
+                sides.Add(panDeCampo);
+            }
             return sides;
         }
         /// <summary>
@@ -61,16 +70,22 @@ namespace CowboyCafe.Data
         public static IEnumerable<IOrderItem> Drinks()
         {
             var drinks = new List<IOrderItem>();
-            CowboyCoffee cowboyCoffee = new CowboyCoffee();
-            drinks.Add(cowboyCoffee);
-            JerkedSoda jerkedSoda = new JerkedSoda();
-            drinks.Add(jerkedSoda);
-            TexasTea texasTea = new TexasTea();
-            drinks.Add(texasTea);
-            Water water = new Water();
-            drinks.Add(water);
+            foreach(Size size in Enum.GetValues(typeof(Size)))
+            {
+                CowboyCoffee cowboyCoffee = new CowboyCoffee();
+                cowboyCoffee.Size = size;
+                drinks.Add(cowboyCoffee);
+                JerkedSoda jerkedSoda = new JerkedSoda();
+                jerkedSoda.Size = size;
+                drinks.Add(jerkedSoda);
+                TexasTea texasTea = new TexasTea();
+                texasTea.Size = size;
+                drinks.Add(texasTea);
+                Water water = new Water();
+                water.Size = size;
+                drinks.Add(water);
+            }
             return drinks;
-
         }
         /// <summary>
         /// list of all menu items
@@ -93,25 +108,34 @@ namespace CowboyCafe.Data
             all.Add(dakotaDoubleBurger);
             TexasTripleBurger texasTripleBurger = new TexasTripleBurger();
             all.Add(texasTripleBurger);
+            foreach (Size size in Enum.GetValues(typeof(Size)))
+            {
+                BakedBeans bakedBeans = new BakedBeans();
+                bakedBeans.Size = size;
+                all.Add(bakedBeans);
+                ChiliCheeseFries chiliCheeseFries = new ChiliCheeseFries();
+                chiliCheeseFries.Size = size;
+                all.Add(chiliCheeseFries);
+                CornDodgers cornDodgers = new CornDodgers();
+                cornDodgers.Size = size;
+                all.Add(cornDodgers);
+                PanDeCampo panDeCampo = new PanDeCampo();
+                panDeCampo.Size = size;
+                all.Add(panDeCampo);
 
-            BakedBeans bakedBeans = new BakedBeans();
-            all.Add(bakedBeans);
-            ChiliCheeseFries chiliCheeseFries = new ChiliCheeseFries();
-            all.Add(chiliCheeseFries);
-            CornDodgers cornDodgers = new CornDodgers();
-            all.Add(cornDodgers);
-            PanDeCampo panDeCampo = new PanDeCampo();
-            all.Add(panDeCampo);
-
-            CowboyCoffee cowboyCoffee = new CowboyCoffee();
-            all.Add(cowboyCoffee);
-            JerkedSoda jerkedSoda = new JerkedSoda();
-            all.Add(jerkedSoda);
-            TexasTea texasTea = new TexasTea();
-            all.Add(texasTea);
-            Water water = new Water();
-            all.Add(water);
-
+                CowboyCoffee cowboyCoffee = new CowboyCoffee();
+                cowboyCoffee.Size = size;
+                all.Add(cowboyCoffee);
+                JerkedSoda jerkedSoda = new JerkedSoda();
+                jerkedSoda.Size = size;
+                all.Add(jerkedSoda);
+                TexasTea texasTea = new TexasTea();
+                texasTea.Size = size;
+                all.Add(texasTea);
+                Water water = new Water();
+                water.Size = size;
+                all.Add(water);
+            }
             return (all);
         }
 
