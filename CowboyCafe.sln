@@ -14,13 +14,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PointOfSale", "PointOfSale\PointOfSale.csproj", "{793E52FB-D687-4293-880C-0BEB1CA1DB75}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documentation", "Documentation", "{7814A4DF-FFCF-4FFF-A076-E640704DB91D}"
-	ProjectSection(SolutionItems) = preProject
-		..\..\..\Downloads\CowboyCafe.Data (2).pdf = ..\..\..\Downloads\CowboyCafe.Data (2).pdf
-		..\..\..\Downloads\CowboyCafe.PointOfSale (2).pdf = ..\..\..\Downloads\CowboyCafe.PointOfSale (2).pdf
-		..\..\..\Downloads\CowboyCafe.Website.pdf = ..\..\..\Downloads\CowboyCafe.Website.pdf
-	EndProjectSection
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Website", "Website\Website.csproj", "{1604A24E-F2F2-4617-A836-5EE70D930FA4}"
 EndProject
 Global

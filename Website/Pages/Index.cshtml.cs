@@ -36,16 +36,31 @@ namespace Website.Pages
         [BindProperty]
         public double? PriceMax { get; set; }
 
-        public void OnGet(uint? CaloriesMin, uint? CaloriesMax, double? PriceMin, double? PriceMax)
+        public void OnGet()
         {
-            this.CaloriesMin = CaloriesMin;
-            this.CaloriesMax = CaloriesMax;
-            this.PriceMin = PriceMin;
-            this.PriceMax = PriceMax;
+            //this.CaloriesMin = CaloriesMin;
+            //this.CaloriesMax = CaloriesMax;
+            //this.PriceMin = PriceMin;
+            //this.PriceMax = PriceMax;
             SearchTerms = Request.Query["SearchTerms"];
-            Items = MenuDatabase.FilterByCalories(Items, this.CaloriesMin, this.CaloriesMax);
-            Items = MenuDatabase.FilterByPrice(Items, this.PriceMin, this.PriceMax);
+            Items = MenuDatabase.FilterByCalories(Items, CaloriesMin, CaloriesMax);
+            Items = MenuDatabase.FilterByPrice(Items, PriceMin, PriceMax);
+            Items = MenuDatabase.FilterByType(Items, Types);
             Items = MenuDatabase.Search(SearchTerms);
+        }
+
+        public void OnPost()
+        {
+            //this.CaloriesMin = CaloriesMin;
+            //this.CaloriesMax = CaloriesMax;
+            //this.PriceMin = PriceMin;
+            //this.PriceMax = PriceMax;
+            //SearchTerms = Request.Query["SearchTerms"];
+            Items = MenuDatabase.Search(SearchTerms);
+            Items = MenuDatabase.FilterByCalories(Items, CaloriesMin, CaloriesMax);
+            Items = MenuDatabase.FilterByPrice(Items, PriceMin, PriceMax);
+            Items = MenuDatabase.FilterByType(Items, Types);
+            
         }
     }
 }

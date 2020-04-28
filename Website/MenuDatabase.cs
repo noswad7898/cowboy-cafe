@@ -7,12 +7,17 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-
+/// <summary>
+/// Author: Dawson Field
+/// Class: MenuDatabase
+/// Function: Holds code for filtering and searching menu items on the website
+/// </summary>
 namespace Website
 {
     public static class MenuDatabase
     {
         private static List<IOrderItem> menuItems = new List<IOrderItem>();
+        
 
         static MenuDatabase()
         {
@@ -29,7 +34,11 @@ namespace Website
                 menuItems.Add(item);
             }
         }
-
+        /// <summary>
+        /// Search Function
+        /// </summary>
+        /// <param name="terms"></param>
+        /// <returns></returns>
         public static IEnumerable<IOrderItem> Search(string terms)
         {
             List<IOrderItem> results = new List<IOrderItem>();
@@ -44,23 +53,30 @@ namespace Website
             return results;
         }
 
-        public static IEnumerable<IOrderItem> FilterByCategory(IEnumerable<IOrderItem> items, string type)
+        public static IEnumerable<IOrderItem> All { get { return Menu.CompleteMenu(); } }
+        /// <summary>
+        /// Filter by item type 
+        /// </summary>
+        /// <param name="items"></param>
+        /// <param name="type"></param>
+        /// <returns></returns>
+        public static IEnumerable<IOrderItem> FilterByType(IEnumerable<IOrderItem> items, string[] type)
         {
             if (type == null) return items;
 
             if (type.Contains("Side"))
             {
-                items.Add(Menu.Sides());
+                items.Concat(Menu.Sides());
             }
 
             if (type.Contains("Entree"))
             {
-                items.Add(Menu.Sides());
+                items.Concat(Menu.Sides());
             }
 
             if (type.Contains("Drink"))
             {
-                items.Add(Menu.Drinks());
+                items.Concat(Menu.Drinks());
             }
             return items;
         }
@@ -103,8 +119,13 @@ namespace Website
             }
             return results;
         }
-
-
+        /// <summary>
+        /// Filter by price
+        /// </summary>
+        /// <param name="menuItems"></param>
+        /// <param name="min"></param>
+        /// <param name="max"></param>
+        /// <returns></returns>
         public static IEnumerable<IOrderItem> FilterByPrice(IEnumerable<IOrderItem> menuItems, double? min, double? max)
         {
             // if min and max are null return all
@@ -117,7 +138,7 @@ namespace Website
             {
                 foreach (IOrderItem item in menuItems)
                 {
-                    if (item.Calories <= max) results.Add(item);
+                    if (item.Price <= max) results.Add(item);
                 }
                 return results;
             }
@@ -126,14 +147,14 @@ namespace Website
             {
                 foreach (IOrderItem item in menuItems)
                 {
-                    if (item.Calories >= min) results.Add(item);
+                    if (item.Price >= min) results.Add(item);
                 }
                 return results;
             }
             // both parameters are provided
             foreach (IOrderItem item in menuItems)
             {
-                if (item.Calories >= min && item.Calories <= max) results.Add(item);
+                if (item.Price >= min && item.Calories <= max) results.Add(item);
             }
             return results;
         }
