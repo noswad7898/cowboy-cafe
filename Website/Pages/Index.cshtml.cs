@@ -13,7 +13,7 @@ using CowboyCafe.Data.Drinks;
 /// <summary>
 /// Author: Dawson Field
 /// Class: Index.cshtml.cs
-/// Description: 
+/// Description: Model for index behavior
 /// </summary>
 namespace Website.Pages
 {
@@ -25,20 +25,20 @@ namespace Website.Pages
         /// <summary>
         /// The current search terms 
         /// </summary>
-        [BindProperty]
+        [BindProperty(SupportsGet = true)]
         public string? SearchTerms { get; set; }
 
-        [BindProperty]
+        [BindProperty(SupportsGet = true)]
         public string[]? Types { get; set; }
-        
-        [BindProperty]
+
+        [BindProperty(SupportsGet = true)]
         public uint? CaloriesMin { get; set; }
-        [BindProperty]
+        [BindProperty(SupportsGet = true)]
         public uint? CaloriesMax { get; set; }
 
-        [BindProperty]
+        [BindProperty(SupportsGet = true)]
         public double? PriceMin { get; set; }
-        [BindProperty]
+        [BindProperty(SupportsGet = true)]
         public double? PriceMax { get; set; }
 
         public void OnGet()
@@ -46,7 +46,7 @@ namespace Website.Pages
             // Search by name
             if (SearchTerms != null)
             {
-                Items = Items.Where(IOrderItem => { return Items.ToString() != null && Items.ToString().Contains(SearchTerms, StringComparison.CurrentCultureIgnoreCase); });
+                Items = Items.Where(IOrderItem => { return Items?.ToString() != null && Items.ToString().Contains(SearchTerms, StringComparison.CurrentCultureIgnoreCase); });
             }
 
 
