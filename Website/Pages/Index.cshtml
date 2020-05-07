@@ -28,15 +28,15 @@
 
         <h4>Types</h4>
         <label>
-            <input type="checkbox" name="Types" value="@Model.Types"/>
+            <input type="checkbox" name="Types" value="@Model.Types.Contains("Entree")"/>
             Entree
         </label>
         <label>
-            <input type="checkbox" name="Types" value="@Model.Types" />
+            <input type="checkbox" name="Types" value="@Model.Types.Contains("Side")" />
             Side
         </label>
         <label>
-            <input type="checkbox" name="Types" value="@Model.Types" />
+            <input type="checkbox" name="Types" value="@Model.Types.Contains("Drink")" />
             Drink
         </label>
 
@@ -198,4 +198,16 @@
         }
     }
     @drinksString
+</div>
+<h2>Jerked Soda Flavors</h2>
+<div>
+    @{
+        string flavorString = null;
+        flavorString += "Cream Soda \n";
+        flavorString += "Orange Soda \n";
+        flavorString += "Sarsparilla \n";
+        flavorString += "Birch Beer \n";
+        flavorString += "Root Beer \n";
+    }
+    @flavorString
 </div>
